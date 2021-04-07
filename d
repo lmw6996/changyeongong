@@ -1,52 +1,18 @@
-#include<iostream>
-#include<string>
+#include <iostream>
 using namespace std;
 
-class Date{
-private:
-    int Year, Month, Day;
-public:
-    Date(int a, int b, int c);
-    Date(string s);
-    void show();
-    int getYear();
-    int getMonth();
-    int getDay();
-};
-
-Date::Date(int a, int b, int c){
-    Year = a;
-    Month = b;
-    Day = c;
-}
-
-Date::Date(string s){
-    Year = stoi(s.substr(0,4));
-    Month = stoi(s.substr(5,1));
-    Day = stoi(s.substr(7,2));
-}
-
-void Date::show(){
-    cout << Year << "년" << Month << "월" << Day << "일\n";
-}
-
-int Date::getYear(){
-    return Year;
-}
-
-int Date::getMonth(){
-    return Month;
-}
-
-int Date::getDay(){
-    return Day;
-}
-
 int main(){
-    Date birth(2014, 3, 20);
-    Date independenceDay("1945/8/15");
-    independenceDay.show();
-    cout << birth.getYear() << ',' << birth.getMonth() << ',' << birth.getDay() << endl;
+ int a;
 
-    return 0;
+ cout<<"1,2,3 중 하나를 입력해주세요"<<endl;
+ while(cin>>a){
+
+ if(a==1)
+ cout<<"최종원은 부러움의 대상입니다"<<endl;
+ if(a==2)
+ cout<<"이민우는 외로움을 항상 느낍니다"<<endl;
+ if(a==3)
+ cout<<"이현수삼수"<<endl;
+}
+return 0;
 }
