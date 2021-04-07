@@ -1,20 +1,52 @@
-#include <iostream>
+#include<iostream>
+#include<string>
 using namespace std;
 
-class Date {
-	int year, month, day;
-public :
-	Date(int y, int m, int d) { year = y; month = m; day = d; }
-	void show() { cout << year << "년" << month << "월" << day << "일" << endl; }
-	int getYear() { return year; }
-	int getMonth() { return month; }
-	int getDay() { return day; }
+class Date{
+private:
+    int Year, Month, Day;
+public:
+    Date(int a, int b, int c);
+    Date(string s);
+    void show();
+    int getYear();
+    int getMonth();
+    int getDay();
 };
 
-int main() {
-	Date birth1(2014, 3, 20);
-        Date birth2(1945, 8, 15);
+Date::Date(int a, int b, int c){
+    Year = a;
+    Month = b;
+    Day = c;
+}
 
-	 birth2.show();
-	cout << birth1.getYear() << ',' << birth1.getMonth() << ',' << birth1.getDay() << endl;
+Date::Date(string s){
+    Year = stoi(s.substr(0,4));
+    Month = stoi(s.substr(5,1));
+    Day = stoi(s.substr(7,2));
+}
+
+void Date::show(){
+    cout << Year << "년" << Month << "월" << Day << "일\n";
+}
+
+int Date::getYear(){
+    return Year;
+}
+
+int Date::getMonth(){
+    return Month;
+}
+
+int Date::getDay(){
+    return Day;
+}
+
+int main(){
+    Date birth(2014, 3, 20);
+    Date independenceDay("1945/8/15");
+    independenceDay.show();
+    cout << birth.getYear() << ',' << birth.getMonth() << ',' << birth.getDay() << endl;
+
+    return 0;
 }
