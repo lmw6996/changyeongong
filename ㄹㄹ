@@ -14,7 +14,7 @@ if a=="까페라떼":
     if b>=5:
        print(int(3000*b*0.9))
     else:
-        print(3000*b)ㄹ
+        print(3000*b)
 if a=="사과쥬스":
     if b>=5:
        print(int(1000*b*0.9))
